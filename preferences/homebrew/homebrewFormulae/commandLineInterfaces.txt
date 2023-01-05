@@ -25,6 +25,7 @@ neofetch
 onefetch
 pam_yubico
 pipes-sh
+reattach-to-user-namespace
 sc-im
 shellshare
 slides
