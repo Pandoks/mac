@@ -1,0 +1,12 @@
+# math.txt
+# List of math modules to be installed
+
+blis
+kiwisolver
+matplotlib
+matplotlib-inline
+numpy
+pandas
+pandas-stubs
+prettytable
+seaborn

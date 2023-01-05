@@ -1,0 +1,16 @@
+# media.txt
+# List of Homebrew Cask media tools to be installed
+
+4k-video-downloader
+audacity
+discord
+handbrake
+messenger
+# minecraft
+# nvidia-geforce-now
+# openemu
+slack
+spotify
+streamlabs-obs
+tor-browser
+zoom

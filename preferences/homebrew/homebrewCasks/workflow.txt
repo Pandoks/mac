@@ -1,0 +1,24 @@
+# workflow.txt
+# List of Homebrew Cask workflow tools to be installed
+
+alt-tab
+betterdisplay
+# box-drive
+# brave-browser
+# firefox
+flux
+google-drive
+hammerspoon
+hiddenbar
+# logitech-options
+protonmail-bridge
+protonvpn
+# remnote
+selfcontrol
+stats
+tastyworks
+thinkorswim
+topnotch
+tradingview
+via
+webull

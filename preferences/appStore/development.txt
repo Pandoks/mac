@@ -1,0 +1,13 @@
+# development.txt
+# List of development apps to install from the App Store
+
+# Xcode
+497799835
+# Keynote
+409183694
+# virtualOS
+1614659226
+# Eqution Maker
+802547750
+# Petrify
+1451177988

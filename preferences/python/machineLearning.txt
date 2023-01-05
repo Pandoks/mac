@@ -1,0 +1,9 @@
+# machineLearning.txt
+# List of machine learning modules to be installed
+
+openai
+sklearn
+thinc
+thinc-apple-ops
+torch
+torchmetrics

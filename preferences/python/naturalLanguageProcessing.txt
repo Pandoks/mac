@@ -1,0 +1,19 @@
+# naturalLanguageProcessing.txt
+# List of natural language processing modules to be installed
+
+gingerit
+gramformer
+langcodes
+language-tool-python
+Levenshtein
+nltk
+rapidfuzz
+regex
+sentencepiece
+spacy
+spacy-legacy
+spacy-loggers
+stanza
+tokenizers
+transformers
+wfst4str

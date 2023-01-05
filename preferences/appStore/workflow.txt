@@ -1,0 +1,7 @@
+# workflow.txt
+# List of workflow apps to install from the App Store
+
+# Magnet
+441258766
+# Noir
+1592917505

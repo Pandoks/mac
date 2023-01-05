@@ -1,0 +1,9 @@
+# languages.txt
+# List of programming languages to be installed
+
+dafny
+go
+openjdk
+r
+rust
+postgresql@14

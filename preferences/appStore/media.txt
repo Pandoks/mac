@@ -1,0 +1,15 @@
+# media.txt
+# List of media apps to install from the App Store
+
+# Shazam
+897118787
+# Final Cut Pro
+424389933
+# Main Stage
+634159523
+# Motion
+434290957
+# Compressor
+424390742
+# Logic Pro
+634148309

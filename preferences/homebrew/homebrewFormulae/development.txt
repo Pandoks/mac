@@ -1,0 +1,24 @@
+# development.txt
+# List of development tools/libraries to be installed
+
+blueutil
+cling
+coreutils
+dwm
+git
+grip
+jupyterlab
+less
+neovim
+libtensorflow
+opencv
+opencv@3
+openssl@3
+pyenv
+qemu
+rtorrent
+scipy
+tor
+vim
+wget
+z

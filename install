@@ -1,0 +1,28 @@
+#!/bin/zsh
+# install
+# Install the bare minimum so process can hand over control to python installer
+
+# Make sure to be signed into apple id already
+echo "Are you signed into your Apple ID? [y/n]"
+read response
+if [ "$response" = "y" ]; then 
+    echo Starting installation
+else
+    echo Make sure you are signed into your Apple ID before installation.
+    exit
+fi
+
+# initial install function imports
+source ./initial/homebrew.sh
+
+# initial installation (preparing for bigger install)
+# installation of Homebrew
+homebrew_install
+brew_cu_install
+
+# installation of python and mas for bigger install
+brew install python
+brew install mas
+
+# chonky install (pipe to python installer)
+python3 ./main/install.py

@@ -1,0 +1,19 @@
+# computerVision.txt
+# List of computer vision modules to be installed
+
+contourpy
+imageio
+opencv-python
+Pillow
+PyQt3D
+PyQt5
+PyQt5-sip
+PyQtChart
+PyQtDataVisualization
+PyQtNetworkAuth
+PyQtPurchasing
+PyQtWebEngine
+QtPy
+scikit-image
+scikit-learn
+scipy

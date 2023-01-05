@@ -1,0 +1,7 @@
+# cryptocurrencies.txt
+# List of cryptocurrencies to be installed
+
+bitcoin
+cointop
+ethereum
+monero

@@ -1,0 +1,21 @@
+# development.txt
+# List of Homebrew Cask development tools to be installed
+
+autodesk-fusion360
+balenaetcher
+github
+jupyterlab
+ledger-live
+mactex-no-gui
+microsoft-auto-update
+microsoft-excel
+microsoft-powerpoint
+microsoft-teams
+microsoft-word
+miniconda
+# parallels
+# parallels-access
+# parallels-toolbox
+# rstudio
+visual-studio-code
+# vmware-horizon-client
