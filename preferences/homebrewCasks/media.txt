@@ -9,6 +9,7 @@ messenger
 # minecraft
 # nvidia-geforce-now
 # openemu
+rode-central
 slack
 spotify
 streamlabs-obs

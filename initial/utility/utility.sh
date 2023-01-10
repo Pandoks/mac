@@ -1,8 +1,8 @@
 #!/bin/zsh
-# homebrew.sh
-# Functions to help install Homebrew (brew.sh)
+# utility.sh
+# Script functions to help other installations
 
-# Check for Homebrew
+# Install Homebrew
 homebrew_install() {
     printf "Installing Homebrew\n"
 

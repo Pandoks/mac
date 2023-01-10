@@ -23,7 +23,6 @@ decorator
 defusedxml
 dnspython
 emoji
-en-core-web-sm
 entrypoints
 errant
 et-xmlfile
@@ -73,7 +72,6 @@ prometheus-client
 prompt-toolkit
 protobuf
 psutil
-psycopg2
 ptyprocess
 pure-eval
 pybind11

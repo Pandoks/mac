@@ -2,7 +2,7 @@
 # List of Homebrew Cask workflow tools to be installed
 
 alt-tab
-# TODO: Develop Arc Browser cask after release
+arc
 betterdisplay
 # box-drive
 # brave-browser

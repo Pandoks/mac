@@ -2,9 +2,6 @@
 # Functions to help install oh-my-zsh
 
 import os
-
-import sys
-sys.path.append('../utility')
 from utility import process
 
 def process_download(link: str, filepath: str) -> None:
@@ -19,3 +16,14 @@ def install() -> None:
     process_download(link, filepath)
     os.system(filepath)
     print('Oh-My-Zsh Installed')
+
+if __name__ == '__main__':
+    askPrompt = process.check_prompt()
+    if askPrompt:
+        if input('Do you want to install Oh-My-Zsh [y/n]? ') == 'y':
+            install()
+        else:
+            print('Skipping')
+            exit()
+    else:
+        install()

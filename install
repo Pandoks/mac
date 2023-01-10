@@ -2,27 +2,43 @@
 # install
 # Install the bare minimum so process can hand over control to python installer
 
-# Make sure to be signed into apple id already
-echo "Are you signed into your Apple ID? [y/n]"
-read response
-if [ "$response" = "y" ]; then 
-    echo Starting installation
-else
-    echo Make sure you are signed into your Apple ID before installation.
+# Ask what type of installation user wants
+read "installOption?What type of installation do you want?
+1. Full installation
+   (hombrew, terminal, casks, applications, settings, preferences)
+
+2. Clean installation
+   (bare minimum: hombrew, terminal)
+
+3. Application installation
+   (hombrew, terminal, casks, applications)
+
+4. Preference installation [MUST have all others installed]
+   (settings, preferences)
+Type [1/2/3/4/other]: "
+
+if [[ "$installOption" = "" || ! "1 2 3 4" =~ "$installOption" ]]; then
+    echo Exiting...
     exit
 fi
 
-# initial install function imports
-source ./initial/homebrew.sh
+read "askPrompt?Do you want to be prompted about what is being installed [y/n]? "
 
-# initial installation (preparing for bigger install)
-# installation of Homebrew
-homebrew_install
-brew_cu_install
+if [ "$installOption" = "1" ]; then 
+    . ./initial/fullInstallation.sh 
 
-# installation of python and mas for bigger install
-brew install python
-brew install mas
+elif [ "$installOption" = "2" ]; then
+    . ./initial/cleanInstallation.sh
 
-# chonky install (pipe to python installer)
-python3 ./main/install.py
+elif [ "$installOption" = "3" ]; then
+    . ./initial/applicationInstallation.sh
+
+elif [ "$installOption" = "4" ]; then
+    . ./initial/preferenceInstallation.sh
+
+fi
+
+# Restart system
+read "response?Press any key to restart computer."
+echo "Verification... (ctrl-c to cancel)"
+sudo shutdown -r now

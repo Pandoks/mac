@@ -17,5 +17,6 @@ miniconda
 # parallels-access
 # parallels-toolbox
 # rstudio
+utm
 visual-studio-code
 # vmware-horizon-client

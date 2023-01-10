@@ -2,6 +2,7 @@
 # Functions to help process files
 
 import os
+import sys
 
 def txt_to_list(filepath: str) -> list:
     file = open(filepath, 'r')
@@ -19,10 +20,9 @@ def txt_to_list(filepath: str) -> list:
     file.close()
     return list
 
-def preference_file_location_list(preferencePath: str, preferenceOption='') -> list:
-    preferenceOptionPath = '%s/%s' % (preferencePath, preferenceOption)
-    preferenceOptionFiles = next(os.walk(preferenceOptionPath))[2]
-    preferenceOptionFileLocations = ['%s/%s' % (preferenceOptionPath, file) for file in preferenceOptionFiles]
+def preference_file_location_list(preferencePath: str) -> list:
+    preferenceOptionFiles = next(os.walk(preferencePath))[2]
+    preferenceOptionFileLocations = ['%s/%s' % (preferencePath, file) for file in preferenceOptionFiles]
     return preferenceOptionFileLocations
 
 def name_from_file_path(filePath: str) -> str:
@@ -45,9 +45,7 @@ def filter_code(filepath: str, line: str) -> None:
             file.write(fileLine)
     file.close()
 
-def install(filepath: str, installer: str) -> None:
-    installations = txt_to_list(filepath)
-
-    for installation in installations:
-        installationCommand = '%s %s' % (installer, installation)
-        os.system(installationCommand)
+def check_prompt() -> bool:
+    if sys.argv.pop() == 'y':
+        return True
+    return False

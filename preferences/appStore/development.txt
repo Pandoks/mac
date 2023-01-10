@@ -5,9 +5,7 @@
 497799835
 # Keynote
 409183694
-# virtualOS
-1614659226
-# Eqution Maker
+# Equation Maker
 802547750
 # Petrify
 1451177988
