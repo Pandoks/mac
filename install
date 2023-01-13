@@ -5,15 +5,15 @@
 # Ask what type of installation user wants
 read "installOption?What type of installation do you want?
 1. Full installation
-   (hombrew, terminal, casks, applications, settings, preferences)
+   (homebrew, terminal, casks, applications, settings, preferences)
 
 2. Clean installation
-   (bare minimum: hombrew, terminal)
+   (bare minimum: homebrew, terminal)
 
 3. Application installation
-   (hombrew, terminal, casks, applications)
+   (homebrew, terminal, casks, applications)
 
-4. Preference installation [MUST have all others installed]
+4. Preference installation
    (settings, preferences)
 Type [1/2/3/4/other]: "
 
@@ -39,6 +39,7 @@ elif [ "$installOption" = "4" ]; then
 fi
 
 # Restart system
-read "response?Press any key to restart computer."
-echo "Verification... (ctrl-c to cancel)"
+echo Need to restart to realize changes.
+read "response?Press any key to restart computer... (ctrl-c to cancel)"
+echo "Verification:"
 sudo shutdown -r now

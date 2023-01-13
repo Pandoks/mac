@@ -1,0 +1,13 @@
+# instructions.txt
+# Instructions to follow for a successful installation of Pandoks_'s tmux settings
+
+After exiting these instructions, you will be brought into tmux.
+You MUST follow these instructions for a successful installation of Pandoks_'s tmux settings
+
+1. Wait for installations of plugins (look at yellow bar at bottom of terminal)
+2. Wait for status to say "Tmux resurrect file not found!"
+3. Type ctrl+"a", then "I"
+4. Press ENTER/ESCAPE or follow instructions to continue
+5. Type "exit"
+
+Type ":q" to quit

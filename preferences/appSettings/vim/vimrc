@@ -1,0 +1,179 @@
+set nocompatible  "Kill vi-compatibility
+
+" Theme
+set t_Co=256 "256 color
+set background=dark
+set encoding=utf-8 "UTF-8 character encoding
+
+" Cursor
+set mouse=a "Allowed clickable mouse
+"User a line cursor within insert mode and a block cursor everywhere else
+"
+"Reference chart of values:
+"   Ps = 0 -> blinking block
+"   Ps = 1 -> blinking block (default)
+"   Ps = 2 -> steady block
+"   Ps = 3 -> blinking underline
+"   Ps = 4 -> steady underline
+"   Ps = 5 -> blinking bar (xterm)
+"   Ps = 6 -> steady bar (xterm)
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[2 q"
+
+" Indent 4 spaces
+set tabstop=4  "4 space tabs
+set shiftwidth=4  "4 space shift
+set softtabstop=4  "Tab spaces in no hard tab mode
+set expandtab  "Expand tabs into spaces
+set autoindent  "autoindent on new lines
+set smartindent  "autoindent based on syntax
+set cindent  "stricter rules for C programs
+
+set showmatch  "Highlight matching braces
+
+set colorcolumn=80  "Colors 80th character bar
+
+set ruler  "Show bottom ruler
+
+set equalalways  "Split windows equal size
+
+set formatoptions=croq  "Enable comment line auto formatting
+
+set title  "Set window title to file
+set hlsearch  "Highlight on search
+set ignorecase  "Search ignoring case
+set smartcase  "Search using smartcase
+set incsearch  "Start searching immediately
+
+set number "Shows line numbers
+set scrolloff=5  "Never scroll off
+set wildmode=longest,list  "Better unix-like tab completion
+set clipboard=unnamed  "Copy and paste from system clipboard
+set lazyredraw  "Don't redraw while running macros (faster)
+set wrap  "Visually wrap lines
+set linebreak  "Only wrap on 'good' characters for wrapping
+set backspace=indent,eol,start  "Better backspacing
+set linebreak  "Intelligently wrap long files
+set ttyfast  "Speed up vim
+set nostartofline "Vertical movement preserves horizontal position
+
+" Strip whitespace from end of lines when writing file
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Syntax highlighting and stuff
+syntax on
+filetype plugin indent on
+
+" Plug Plugins
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+
+" GitHub Copilot
+Plug 'github/copilot.vim'
+
+" PaperColor
+Plug 'NLKNguyen/papercolor-theme'
+
+" Rainbow Parentheses
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
+" VPolyglot Collection of language packs for Vim
+Plug 'sheerun/vim-polyglot'
+
+" NERDtree file manager
+Plug 'preservim/nerdtree'
+" Keybinds
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+" Scripts
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" FuzzyFinder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+" Conquer of Completion (Adds modern features to vim)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Syntastic
+Plug 'scrooloose/syntastic'
+
+" Dafny install
+Plug 'mlr-msft/vim-loves-dafny', {'for': 'dafny'}
+
+" Initialize plugin system
+call plug#end()
+
+" Syntastic configs
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_dafny_dafny_args = '-allowGlobals'
+" (optional) set your leader key (the default is <\>)
+let mapleader=","
+" " Tell Syntastic to:
+" " - check files on save.
+" " - but only check Dafny files when requested.
+let g:syntastic_mode_map = {
+          \ "mode": "active",
+          \ "passive_filetypes": ["dafny"] }
+" (optional) map "save and check current file" to <leader>c
+let g:syntastic_dafny_checkers = ["dafny"]
+noremap <Leader>c :w<CR>:SyntasticCheck<CR>
+
+
+
+colorscheme PaperColor
+
+
+" Scripts
+" Shortcut split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+" Shortcut move windows
+map ˙ <C-w>H
+map ∆ <C-w>J
+map ˚ <C-w>K
+map ¬ <C-w>L
+map ® <C-w>R
+map ƒ <C-w>r
+" Shortcut for terminal
+nnoremap ¡ :terminal<CR>
+nnoremap ™ :below terminal<CR>
+nnoremap £ :vertical terminal<CR>
+nnoremap ¢ :vertical botright terminal<CR>
+nnoremap ∞ :botright terminal<CR>
+tnoremap <Esc><Esc> <C-\><C-n>
+" Shortcut for resizing window
+nnoremap ≠ :vertical resize +5<CR>
+nnoremap ª :vertical resize -5<CR>
+nnoremap º :resize +5<CR>
+nnoremap – :resize -5<CR>

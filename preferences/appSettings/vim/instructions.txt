@@ -1,0 +1,6 @@
+# instructions.txt
+# Instructions to follow for a successful installation of Pandoks_'s vim settings
+
+1. Press ENTER or follow instructions to continue
+2. Wait for Plug plugins to download 
+3. Keep on typing ":q" until successful exit

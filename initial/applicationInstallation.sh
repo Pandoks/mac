@@ -16,7 +16,7 @@ if [ "$askPrompt" = "y" ]; then
     fi
 
 else
-brew install mas
+    brew install mas
 fi
 
 # Ask if signed into Apple ID
