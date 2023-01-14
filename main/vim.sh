@@ -14,7 +14,7 @@ if [ "$askPrompt" = "y" ]; then
         echo vim settings installed
     else
         echo Skipping
-        exit
+        return
     fi
 else
     echo Installing vim settings

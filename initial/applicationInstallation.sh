@@ -24,6 +24,7 @@ read "response?Are you signed into your Apple ID [y/n]? "
 if [ "$response" != "y" ]; then 
     echo Make sure you are signed into your Apple ID before installation.
     open -a System\ Settings
+    echo Exiting...
     exit
 fi
 

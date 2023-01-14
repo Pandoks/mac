@@ -15,7 +15,7 @@ if [ "$askPrompt" = "y" ]; then
         echo tmux settings installed
     else
         echo Skipping
-        exit
+        return
     fi
 
 else

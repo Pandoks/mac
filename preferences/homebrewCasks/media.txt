@@ -4,6 +4,7 @@
 4k-video-downloader
 audacity
 discord
+gifox
 handbrake
 messenger
 # minecraft
