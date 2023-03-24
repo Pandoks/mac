@@ -155,3 +155,9 @@ Wanna access the installer at any time? Type in a command in the terminal to acc
 ### Saving:
 
 Don't want to manually edit the preference files? Saving will allow you to generate the files by detecting all of your downloads.
+
+---
+
+### Rust:
+
+Letting the rustaceans take over 🦀
