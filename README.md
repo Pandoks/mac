@@ -1,6 +1,8 @@
 mac
 ===
 
+**NOTE:** This repository is archived because I developed a more efficient installer in my [.dotfiles](https://github.com/pandoks/.dotfiles) repository.
+
 An installer for Pandoks_'s macOS applications and settings.
 
 ![Overview](https://user-images.githubusercontent.com/35944715/212475437-4f92c22e-b22b-4787-abe8-425ff12b1aca.gif)
